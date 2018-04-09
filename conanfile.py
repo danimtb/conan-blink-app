@@ -9,6 +9,7 @@ class HelloAppConan(ConanFile):
     exports_sources = "CMakeLists.txt", "main.cpp", "LICENSE"
     generators = "cmake"
 
+
     def build(self):
         cmake = CMake(self)
         if self.settings.arch == "armv7":
@@ -18,6 +19,10 @@ class HelloAppConan(ConanFile):
 
     def package(self):
         self.copy("*helloapp*", src="bin", dst="bin")
+
+    def requirements(self):
+        if self.settings.arch == "armv7":
+            self.requirements.add("wiringpi/2.46@danimtb/testing")
 
     def deploy(self):
         self.copy("*helloapp*", src="bin", dst="bin")

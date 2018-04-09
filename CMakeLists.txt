@@ -6,6 +6,10 @@ if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
   conan_basic_setup()
 endif()
 
+if(WIRINGPI)
+  add_definitions(-DWIRINGPI)
+endif()
+
 message("LIBS: ${CONAN_LIBS}")
 
 ADD_EXECUTABLE(helloapp main.cpp)
