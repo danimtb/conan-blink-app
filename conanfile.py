@@ -12,7 +12,7 @@ class HelloAppConan(ConanFile):
     def build(self):
         cmake = CMake(self)
         if self.settings.arch == "armv7":
-            cmake.definnitions["WIRINGPI"] = True
+            cmake.definitions["WIRINGPI"] = True
         cmake.configure()
         cmake.build()
 
