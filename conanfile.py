@@ -8,7 +8,6 @@ class HelloAppConan(ConanFile):
     url = "https://github.com/danimtb/conan-hello-app.git"
     exports_sources = "CMakeLists.txt", "main.cpp", "LICENSE"
     generators = "cmake"
-    requires = "wiringpi/2.46@danimtb/testing"
 
     def build(self):
         cmake = CMake(self)
