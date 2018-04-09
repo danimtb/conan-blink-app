@@ -9,19 +9,19 @@ int main (void)
 {
     #ifdef WIRINGPI
         wiringPiSetup() ;
-        pinMode(3, OUTPUT) ;
+        pinMode(0, OUTPUT) ;
     #endif
 
     for(;;)
     {
         std::cout << "HIGH" << std::endl;
         #ifdef WIRINGPI
-            digitalWrite(3, HIGH);
+            digitalWrite(0, HIGH);
             delay(500);
         #endif
         std::cout << "LOW" << std::endl;
         #ifdef WIRINGPI
-            digitalWrite(3, LOW);
+            digitalWrite(0, LOW);
             delay(500);
         #endif
     }
