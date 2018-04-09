@@ -15,7 +15,7 @@ node {
         }
         
         stage("Get dependencies and create app") {
-            String strCommand = "create conan-hello-app/conanfile.py danimtb/testing -s arch=armv7"
+            String strCommand = "create . danimtb/testing -s arch=armv7"
             client.run(command: strCommand )
         }
         
