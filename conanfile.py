@@ -22,7 +22,7 @@ class HelloAppConan(ConanFile):
 
     def requirements(self):
         if self.settings.arch == "armv7":
-            self.requirements.add("wiringpi/2.46@danimtb/testing")
+            self.requires("wiringpi/2.46@danimtb/testing")
 
     def deploy(self):
         self.copy("*helloapp*", src="bin", dst="bin")
