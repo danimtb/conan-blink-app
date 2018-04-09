@@ -13,3 +13,4 @@ endif()
 message("LIBS: ${CONAN_LIBS}")
 
 ADD_EXECUTABLE(helloapp main.cpp)
+target_link_libraries(helloapp ${CONAN_LIBS})
