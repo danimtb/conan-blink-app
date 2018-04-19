@@ -13,7 +13,7 @@ node {
         }
         
         stage("Get dependencies and create app") {
-            String strCommand = "create . danimtb/testing -pr /home/conan/.conan/profiles/default"
+            String strCommand = "create . danimtb/develop -pr /home/conan/.conan/profiles/default"
             client.run(command: strCommand )
         }
         
