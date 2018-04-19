@@ -1,10 +1,8 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8)
-PROJECT(HelloApp)
+PROJECT(BlinkApp)
 
-if(EXISTS ${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-  include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
-  conan_basic_setup()
-endif()
+include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
+conan_basic_setup()
 
 if(WIRINGPI)
   add_definitions(-DWIRINGPI)

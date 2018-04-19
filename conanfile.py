@@ -20,11 +20,11 @@ class BlinkAppConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*blinkapp*", src="bin", dst="bin")
+        self.copy("blinkapp", src="bin", dst="bin")
 
     def requirements(self):
         if self.settings.arch == "armv7":
             self.requires("wiringpi/2.46@conan/stable")
 
     def deploy(self):
-        self.copy("*blinkapp*", src="bin", dst="bin")
+        self.copy("blinkapp", src="bin", dst="bin")
