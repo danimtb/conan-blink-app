@@ -1,11 +1,13 @@
 from conans import ConanFile, CMake
 
 
-class HelloAppConan(ConanFile):
-    name = "HelloApp"
+class BlinkAppConan(ConanFile):
+    name = "BlinkApp"
     version = "0.1"
+    license = "MIT"
+    description = "Blink application"
     settings = "os", "compiler", "build_type", "arch"
-    url = "https://github.com/danimtb/conan-hello-app.git"
+    url = "https://github.com/danimtb/conan-blink-app.git"
     exports_sources = "CMakeLists.txt", "main.cpp", "LICENSE"
     generators = "cmake"
 
@@ -18,11 +20,11 @@ class HelloAppConan(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*helloapp*", src="bin", dst="bin")
+        self.copy("*blinkapp*", src="bin", dst="bin")
 
     def requirements(self):
         if self.settings.arch == "armv7":
-            self.requires("wiringpi/2.46@danimtb/testing")
+            self.requires("wiringpi/2.46@conan/stable")
 
     def deploy(self):
-        self.copy("*helloapp*", src="bin", dst="bin")
+        self.copy("*blinkapp*", src="bin", dst="bin")

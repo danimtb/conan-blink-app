@@ -8,17 +8,18 @@
 int main (void)
 {
     #ifdef WIRINGPI
-        wiringPiSetup() ;
-        pinMode(0, OUTPUT) ;
+        wiringPiSetup();
+        pinMode(0, OUTPUT);
     #endif
 
-    for(;;)
+    while(1)
     {
         std::cout << "HIGH" << std::endl;
         #ifdef WIRINGPI
             digitalWrite(0, HIGH);
             delay(500);
         #endif
+
         std::cout << "LOW" << std::endl;
         #ifdef WIRINGPI
             digitalWrite(0, LOW);
@@ -26,5 +27,5 @@ int main (void)
         #endif
     }
 
-    return 0 ;
+    return 0;
 }
